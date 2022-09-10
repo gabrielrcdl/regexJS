@@ -1,4 +1,4 @@
- /*Caracteres epeciais
+/*Caracteres epeciais
 
  \d - Qualquer dígito de caractere
  \w - Um caractere alfanumérico("teste")
@@ -9,12 +9,7 @@
  \S - Caractere que não seja espaço em branco
 
  . - Qualquer caractere, menos nova linha
-
-
  */
-
-
-
 
 
 
@@ -47,3 +42,40 @@ const padrao = /Abacax?i/;
 
 console.log(padrao.test("Abacaxi"));
 console.log(padrao.test("Abacai"));
+
+
+// Operador dígitos  precisos
+const cep = /\d{5}-\d{3}/;
+console.log(cep.test("57690-000"));
+console.log(cep.test("erererer"));
+
+
+// Exec
+
+const digitos = /\d+/
+
+console.log(digitos.exec("Tem o número 100 aqui"))
+console.log(digitos.exec("Tem o número aqui"))
+
+// Choice pattern
+// Podemos colocar uma instrução na regex que funciona como || (or) das condicionais;
+
+const frutas = /\d+ (bananas|maçãs|goiabas)/;
+console.log(frutas.test("10 bananas"))
+console.log(frutas.test("8 goiabas"))
+console.log(frutas.test("10 jacas"))
+
+
+// Validando um domínio, podemos validar da seguinte forma:
+
+const validarDominio = /www.\w+\.com|com.br/
+console.log(validarDominio.test("www.google.com"))
+console.log(validarDominio.test("google.com"))
+console.log(validarDominio.test("google.com.br"))
+
+// Validando email
+
+const validarEmail = /\w+@\w+\.\w+/
+console.log(validarEmail.test("gr78787@gmail.com"))
+
+
